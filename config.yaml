@@ -1,0 +1,30 @@
+http:
+  listen: ':8080'
+  key: 'key'
+repo:
+  url: 'https://gitee.com/git-work/configmaps.git'
+  branch: main
+  auth:
+    type: none
+    # type: ssh
+    # privateKey: |-
+    #   -----BEGIN OPENSSH PRIVATE KEY-----
+    #   -----END OPENSSH PRIVATE KEY-----
+    # user: git
+    # password: password
+    # type: http-basic-auth
+    # username: user
+    # password: password
+    # type: http-token-auth
+    # token: token
+  # dir: './configmaps'
+  progress: true
+  force: false
+operator:
+  allowCreate: true
+  onlyManaged: true
+  cacheIds: true
+  kinds:
+    - ConfigMap
+  namespaces:
+    - default
